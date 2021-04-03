@@ -1,7 +1,8 @@
+<!--All the classes here are from the twitter styles that i downloaded and rating is awesome font that i downloaded-->
 <div class = 'card'>
 
   <div class = 'card-header'>
-    Product List
+    {{pageTitle}}
   </div>
 
   <div class='card body'>
@@ -20,9 +21,11 @@
     </div>
 
     <div class='rable-responsive'>
-      <table class='table'>
+      <table class='table' *ngIf='products.length'>
         <thead>
+          <!--The first table row will contain the table headers-->
           <tr>
+            <!--Tabel Header th-->
             <th>
               <button class='btn btn-primary'>
                 Show Image
@@ -35,8 +38,18 @@
             <th>5 Star Rating</th>
           </tr>
         </thead>
+        <!--Table body-->
         <tbody>
-
+          <!--TR elements for table rows-->
+          <tr *ngFor='let product of products'>
+            <!--TD elements for table data-->
+            <td></td>
+            <td>{{ product.productName }}</td>
+            <td>{{ product.productCode }}</td>
+            <td>{{ product.releaseDate }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.starRating }}</td>
+          </tr>
         </tbody>
       </table>
     </div>
