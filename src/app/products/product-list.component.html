@@ -21,8 +21,9 @@
       </div>
     </div>
 
-    <div class='rable-responsive'>
+    <div class='table-responsive'>
       <table class='table' *ngIf='products.length'>
+        <!--The thead is for the column headers-->
         <thead>
           <!--The first table row will contain the table headers-->
           <tr>
@@ -43,7 +44,7 @@
         <!--Table body-->
         <tbody>
           <!--TR elements for table rows-->
-          <tr *ngFor='let product of products'>
+          <tr *ngFor='let product of filteredProducts'>
             <!--TD elements for table data-->
             <td>
               <img *ngIf='showImage'
@@ -53,7 +54,7 @@
                     [style.margin.px]='imageMargin'>
             </td>
             <td>{{ product.productName }}</td>
-            <td>{{ product.productCode }}</td>
+            <td>{{ product.productCode | convertToSpaces:'-'}}</td>
             <td>{{ product.releaseDate }}</td>
             <td>{{ product.price | currency:'GBP':'symbol':'1.2-2' }}</td>
             <td>{{ product.starRating }}</td>
