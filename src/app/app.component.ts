@@ -10,7 +10,7 @@ import { Component } from "@angular/core";
       <li><a class='nav-link' routerLink='/products'>Product List</a></li>
     </ul>
   </nav>
-  <div>
+  <div class="col-md-10 mx-auto">
     <router-outlet></router-outlet>
   </div>
   `
